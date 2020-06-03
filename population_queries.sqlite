@@ -35,3 +35,8 @@ from population_years
 where country = "Indonesia" and year between 2000 and 2010
 order by population desc
 ;
+
+SELECT (SELECT population FROM population_years WHERE country = 'Indonesia' AND year = 2010)
+- population AS 'growth' 
+FROM population_years WHERE country = 'Indonesia' 
+AND year = 2000;
